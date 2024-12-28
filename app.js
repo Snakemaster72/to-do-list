@@ -23,7 +23,7 @@ btn.addEventListener("click", function () {
       </div>
     `;
     tasks.appendChild(taskItem);
-    input.value("");
+    input.value = "";
 
     doneTask(taskItem.querySelector(".done"));
     removeTask(taskItem.querySelector(".delete"));

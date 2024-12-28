@@ -1,0 +1,123 @@
+.body {
+  height: 100vh;
+  width: 100vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url("./assets/windows-xp-bliss-4k-lu-2048x1152.jpg");
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center; /* Vertically centers the items */
+  justify-content: center; /* Horizontally centers the items */
+}
+.container {
+  position: absolute;
+  display: flex;
+  align-items: center; /* Vertically centers the items */
+  justify-content: center; /* Horizontally centers the items */
+  z-index: 1000;
+  flex-direction: column;
+  border: 1px solid #1e4c9d;
+  box-shadow: inset 0 -1px 0 #5a9fef;
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
+  background: linear-gradient(to bottom, #3968b0, #204d8c, #204d8c);
+  padding-bottom: 10px;
+}
+.header {
+  position: relative;
+  width: 90vw;
+  font-size: small;
+  padding: 5px;
+  color: white;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  white-space: nowrap;
+  background-color: #c0c0c0;
+}
+.input-task {
+  background-color: #c0c0c0;
+  width: 100%;
+  overflow: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+.task-button {
+  width: 100%;
+  background-color: #c0c0c0;
+  border-color: #e2e2e2;
+  box-shadow: inset 1rem;
+}
+ul {
+  margin-top: 0;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 0;
+}
+
+ul li {
+  background-color: #c0c0c0;
+  list-style: none;
+  font-size: small;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  display: flex; /* Enable flexbox for the list item */
+  justify-content: space-between; /* Space out the content */
+  align-items: center;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-image: url("./assets/unchecked.png");
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url("./assets/checked.png");
+}
+
+ul li.buttons {
+  display: flex;
+  gap: 8px;
+}
+ul li button {
+  background-color: #c0c0c0;
+  border-color: #e2e2e2;
+  box-shadow: inset 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    position: absolute;
+    width: 50vw;
+    top: 20%;
+  }
+  .input {
+    flex-direction: row;
+  }
+  .task-button {
+    width: fit-content;
+  }
+  .header {
+    width: 50vw;
+    margin: 0;
+    left: 5px;
+  }
+}
